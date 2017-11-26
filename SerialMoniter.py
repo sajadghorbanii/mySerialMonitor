@@ -153,8 +153,8 @@ class Window(QWidget):
             for i in range(1, count + 1):
                 v1 = np.array([self.count + self.dx - self.dx * (1 - i / count)])
                 v2 = data[i-1]
-                #data = np.concatenate([v1, v2], axis=0) #別の変数に入れてやる
-                #data = np.array([data])
+                data_temp = np.concatenate([v1, v2], axis=0)
+                data = np.array([data_temp])
                 self.data = np.append(self.data, np.array([data[i - 1]]), axis=0)
             #self.graphplot()
         self.data = np.append(self.data, np.array(
